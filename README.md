@@ -6,7 +6,8 @@ The idea was to create a generic toolkit to plug any kind of protocol/service.
 
 # Slides
 
-DET has been presented at [BSides Ljubljana](https://bsidesljubljana.si/) on the 9th of March 2016 and the slides will be available here. Soon.
+DET has been presented at [BSides Ljubljana](https://bsidesljubljana.si/) on the 9th of March 2016 and the slides will be available here.
+Slides are available [here](https://docs.google.com/presentation/d/11uk6d-xougn3jU1wu4XRM3ZGzitobScSSMUlx0MRTzg).
 
 # Example usage (ICMP plugin)
 
