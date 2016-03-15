@@ -189,6 +189,7 @@ So far, I am busy implementing new modules which are almost ready to ship, inclu
 
 # Roadmap
 
+- [X] Add proper encryption (eg. AES-256)
 - [ ] Compression (extremely important!)
 - [ ] Proper data obfuscation and integrating [Markovobfuscate](https://github.com/bwall/markovobfuscate)
 - [ ] FTP, FlickR [LSB Steganography](https://github.com/RobinDavid/LSB-Steganography) and Youtube modules
@@ -201,6 +202,7 @@ Some pretty cool references/credits to people I got inspired by with their proje
 - [https://github.com/ytisf/PyExfil](PyExfil), truely awesome. 
 - [https://github.com/m57/dnsteal](dnsteal) from m57.
 - [https://github.com/3nc0d3r/NaishoDeNusumu](NaishoDeNusumu) from 3nc0d3r.
+- [https://github.com/glennzw/exphil](Exphil) from Glenn Wilkinson.
 - WebExfile from Saif El-Sherei
 
 # Contact/Contributing
