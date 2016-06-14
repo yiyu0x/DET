@@ -14,12 +14,14 @@ from random import randint
 from os import listdir
 from os.path import isfile, join
 from Crypto.Cipher import AES
+from zlib import compress, decompress
 
 KEY = ""
 MIN_TIME_SLEEP = 1
 MAX_TIME_SLEEP = 30
 MIN_BYTES_READ = 1
 MAX_BYTES_READ = 500
+COMPRESSION    = True
 files = {}
 threads = []
 config = None
@@ -189,6 +191,8 @@ class Exfiltration(object):
             os.path.pathsep, ''), time.strftime("%Y-%m-%d.%H:%M:%S", time.gmtime()))
         content = ''.join(str(v) for v in files[jobid]['data']).decode('hex')
         content = aes_decrypt(content, self.KEY)
+        if COMPRESSION:
+            content = decompress(content)
         f = open(filename, 'w')
         f.write(content)
         f.close()
@@ -252,7 +256,10 @@ class ExfiltrateFile(threading.Thread):
         # sending the data
         f = tempfile.SpooledTemporaryFile()
         e = open(self.file_to_send, 'rb')
-        f.write(aes_encrypt(e.read(), self.exfiltrate.KEY))
+        data = e.read()
+        if COMPRESSION:
+            data = compress(data)
+        f.write(aes_encrypt(data, self.exfiltrate.KEY))
         f.seek(0)
         e.close()
 
@@ -289,7 +296,7 @@ def signal_handler(bla, frame):
 
 
 def main():
-    global MAX_TIME_SLEEP, MIN_TIME_SLEEP, KEY, MAX_BYTES_READ, MIN_BYTES_READ
+    global MAX_TIME_SLEEP, MIN_TIME_SLEEP, KEY, MAX_BYTES_READ, MIN_BYTES_READ, COMPRESSION
     global threads, config
 
     parser = argparse.ArgumentParser(
@@ -324,6 +331,7 @@ def main():
     MAX_TIME_SLEEP = int(config['max_time_sleep'])
     MIN_BYTES_READ = int(config['min_bytes_read'])
     MAX_BYTES_READ = int(config['max_bytes_read'])
+    COMPRESSION    = bool(config['compression'])
     KEY = config['AES_KEY']
     app = Exfiltration(results, KEY)
 
