@@ -190,9 +190,9 @@ So far, I am busy implementing new modules which are almost ready to ship, inclu
 
 # Roadmap
 
-- [X] Add proper encryption (eg. AES-256)
-- [ ] Compression (extremely important!)
-- [ ] Proper data obfuscation and integrating [Markovobfuscate](https://github.com/bwall/markovobfuscate)
+- [X] Add proper encryption (eg. AES-256) Thanks to [ryanohoro](https://github.com/ryanohoro)
+- [X] Compression (extremely important!) Thanks to [chokepoint](https://github.com/chokepoint)
+- [ ] Proper data obfuscation and integrating [Cloakify Toolset Toolset](https://github.com/trycatchhcf/cloakify)
 - [ ] FTP, FlickR [LSB Steganography](https://github.com/RobinDavid/LSB-Steganography) and Youtube modules
 
 # References
