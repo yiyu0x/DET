@@ -213,4 +213,5 @@ Feel free if you want to contribute, clone, fork, submit your PR and so on.
 
 # License
 
-DET is licensed under a Creative Commons [Attribution-NonCommercial-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-sa/4.0/). Permissions beyond the scope of this license may be available at [info@sensepost.com](info@sensepost.com)
+DET is licensed under a [MIT License](https://opensource.org/licenses/MIT). 
+Permissions beyond the scope of this license may be available at [info@sensepost.com](info@sensepost.com)
