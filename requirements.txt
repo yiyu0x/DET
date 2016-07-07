@@ -3,3 +3,4 @@ scapy
 pysocks
 dnslib
 pycrypto
+slackclient
