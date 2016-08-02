@@ -1,8 +1,10 @@
 DET (extensible) Data Exfiltration Toolkit
 =======
 
-DET (is provided AS IS), is a proof of concept to perform Data Exfiltration using either single or multiple channel(s) at the same time.
-The idea was to create a generic toolkit to plug any kind of protocol/service.
+DET (is provided AS IS), is a proof of concept to perform Data Exfiltration using either single or multiple channel(s) at the same time.  
+
+The idea was to create a generic toolkit to plug any kind of protocol/service to test implmented Network Monitoring and Data Leakage Prevention (DLP) solutions configuration, against different data exfiltration techniques.
+
 
 # Slides
 
