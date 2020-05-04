@@ -1,6 +1,11 @@
-tweepy
-scapy
-pysocks
-dnslib
-pycrypto
-slackclient
+beautifulsoup4==4.4.1
+chardet==2.3.0
+html5lib==0.999
+lxml==3.5.0
+mercurial==3.7.3
+pycrypto==2.6.1
+pycurl==7.43.0
+python-apt==1.1.0b1+ubuntu0.16.4.8
+scapy==2.4.3
+six==1.10.0
+zenmap==5.20
